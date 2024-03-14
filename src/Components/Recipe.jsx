@@ -20,20 +20,17 @@ const Recipe = () => {
     return (
         <>
             {
-                (!item) ? "" : <div className=" p-3 bg-black text-yellow-400 flex flex-col justify-center">
-                    <div className=" w-6/12 mx-auto my-3">
-                    <img className=" object-fill mx-auto" src={item.strMealThumb} alt="" />
-                    </div>
-                    <div className=" my-5 text-yellow-400 font-bold text-center flex flex-col justify-between items-center gap-2">
-                        <h1 className=" uppercase text-5xl">{item.strMeal}</h1>
-                        <h2 className=" uppercase text-2xl">{item.strArea} Food</h2>
-                        <h3 className=" uppercase text-xl">Category: {item.strCategory}</h3>
-
+                (!item) ? "" : <div className="content">
+                    <img src={item.strMealThumb} alt="" />
+                    <div className="inner-content">
+                        <h1>{item.strMeal}</h1>
+                        <h2>{item.strArea} Food</h2>
+                        <h3>Category {item.strCategory}</h3>
                     </div>
                 
-                    <div className=" uppercase">
-                        <div className=" bg-slate-900 text-pretty my-5 flex flex-col gap-4">
-                            <h2 className=" font-medium text-2xl font-">INGREDIENTS</h2><br />
+                    <div className="recipe-details">
+                        <div className="ingredients">
+                            <h2>Ingredients</h2><br />
                             <h4>{item.strIngredient1}:{item.strMeasure1}</h4>
                             <h4>{item.strIngredient2}:{item.strMeasure2}</h4>
                             <h4>{item.strIngredient3}:{item.strMeasure3}</h4>
@@ -43,8 +40,8 @@ const Recipe = () => {
                             <h4>{item.strIngredient7}:{item.strMeasure7}</h4>
                             <h4>{item.strIngredient8}:{item.strMeasure8}</h4>
                         </div>
-                        <div className="my-20 bg-slate-900">
-                            <h2 className=" font-semibold">Instructions</h2><br />
+                        <div className="instructions">
+                            <h2>Instructions</h2><br />
                             <h4>{item.strInstructions}</h4>
                         </div>
                     </div>
